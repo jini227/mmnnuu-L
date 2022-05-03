@@ -3,37 +3,47 @@
 
     <!-- [head] 영역 시작 -->
     <head>
-        <title layout:title-pattern="$LAYOUT_TITLE :: $CONTENT_TITLE">Future Imperfect</title>
+        <title layout:title-pattern="$LAYOUT_TITLE :: $CONTENT_TITLE">mmnnuu</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="icon" th:href="@{/images/favicon.ico}"/>
+        <noscript><link rel="stylesheet" th:href="@{/css/noscript.css}"/></noscript>
+        <link rel="icon" th:href="@{/images/logo.svg}"/>
     </head>
     <!-- [head] 영역 끝 -->
 
     <body class="is-preload">
+        <!-- 공통 css -->
+        <!-- 개별 css -->
+        <th:block layout:fragment="css"></th:block>
+
         <div id="wrapper">
+
             <!-- [header] 영역 시작 -->
             <header id="header" th:replace="fragments/header :: headerFragment"></header>
             <!-- [header] 영역 끝 -->
 
             <!-- [menu] 영역 시작 -->
-            <section th:replace="fragments/menu :: menuFragment"></section>
+            <nav id="menu" th:replace="fragments/menu :: menuFragment"></nav>
             <!-- [menu] 영역 끝 -->
 
             <!-- [content] 영역 시작 -->
             <div layout:fragment="content"></div>
             <!-- [content] 영역 끝 -->
 
-            <!-- [sidebar] 영역 시작 -->
-            <section id="sidebar" th:replace="fragments/sidebar :: sidebarFragment"></section>
-            <!-- [sidebar] 영역 끝 -->
-
-            <!-- [config] 영역 시작 -->
-            <config th:replace="fragments/config :: configFragment"></config>
-            <!-- [config] 영역 끝 -->
+            <!-- [footer] 영역 시작 -->
+            <footer id="footer" th:replace="fragments/footer :: footerFragment"></footer>
+            <!-- [footer] 영역 끝 -->
 
         </div>
+
+        <!-- 공통 js -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <!-- 개인 js -->
+        <th:block layout:fragment="js"></th:block>
 
     </body>
 </html>
