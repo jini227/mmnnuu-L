@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <!-- [head] 영역 시작 -->
+    <head>
+        <title layout:title-pattern="$LAYOUT_TITLE :: $CONTENT_TITLE">Future Imperfect</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" th:href="@{/images/favicon.ico}"/>
+    </head>
+    <!-- [head] 영역 끝 -->
+
+    <body class="is-preload">
+        <div id="wrapper">
+            <!-- [header] 영역 시작 -->
+            <header id="header" th:replace="fragments/header :: headerFragment"></header>
+            <!-- [header] 영역 끝 -->
+
+            <!-- [menu] 영역 시작 -->
+            <section th:replace="fragments/menu :: menuFragment"></section>
+            <!-- [menu] 영역 끝 -->
+
+            <!-- [content] 영역 시작 -->
+            <div layout:fragment="content"></div>
+            <!-- [content] 영역 끝 -->
+
+            <!-- [sidebar] 영역 시작 -->
+            <section id="sidebar" th:replace="fragments/sidebar :: sidebarFragment"></section>
+            <!-- [sidebar] 영역 끝 -->
+
+            <!-- [config] 영역 시작 -->
+            <config th:replace="fragments/config :: configFragment"></config>
+            <!-- [config] 영역 끝 -->
+
+        </div>
+
+    </body>
+</html>

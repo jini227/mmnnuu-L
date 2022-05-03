@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<config th:fragment="configFragment">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- 공통 js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- 개별 css/js -->
+    <th:block layout:fragment="css"></th:block>
+    <th:block layout:fragment="js"></th:block>
+</config>
+
+</html>
